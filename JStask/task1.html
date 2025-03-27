@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse a Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f2f2f2;
+        }
+        h2 {
+            color: #333;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Reverse a Number</h2>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="reverseAndDisplay()">Reverse</button>
+    <p id="result"></p>
+
+    <script>
+        function reverseNumber(number) {
+            return parseInt(number.toString().split('').reverse().join('')) * Math.sign(number);
+        }
+
+        function reverseAndDisplay() {
+            const input = document.getElementById("numberInput").value;
+            const number = parseInt(input);
+            if (!isNaN(number)) {
+                document.getElementById("result").innerText = "Reversed Number: " + reverseNumber(number);
+            } else {
+                document.getElementById("result").innerText = "Please enter a valid number!";
+            }
+        }
+    </script>
+
+</body>
+</html>
